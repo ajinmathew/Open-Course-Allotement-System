@@ -1,9 +1,522 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ApplyApplication">
+    tools:context=".ApplyApplication"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="15dp"
+    android:background="@android:color/darker_gray">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="18sp"
+            android:textColor="#121212"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:id="@+id/nameApply"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Date of Birth"
+            android:textSize="18sp"
+            android:textColor="#121212"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:id="@+id/dobApply"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Department"
+            android:textSize="18sp"
+            android:textColor="#121212"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:id="@+id/departmentApply"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Register No"
+            android:textSize="18sp"
+            android:textColor="#121212"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:id="@+id/regNoApply"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="eMail"
+            android:textSize="18sp"
+            android:textColor="#121212"/>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:id="@+id/emailApply"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Gender"
+            android:textSize="18sp"
+            android:textColor="#121212"/>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RadioGroup
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Male    "
+                    android:id="@+id/maleGenderApply"/>
+
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Female"
+                    android:id="@+id/femaleGenderApply"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Detials of Qualification Exam"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:textColor="@android:color/black"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="1.5">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Stream"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#121212"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="3.5">
+
+            <RadioGroup
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="HSE "
+                    android:textColor="#121212"
+                    android:id="@+id/hseApply"/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="VHSE "
+                    android:textColor="#121212"
+                    android:id="@+id/vhseApply"/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="THSE "
+                    android:textColor="#121212"
+                    android:id="@+id/thseApply"/>
+            </RadioGroup>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="3">
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="#121212"
+                android:text="Total aggresive marks of the Exam:"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/aggmarkApply"
+                android:inputType="numberDecimal"
+                android:singleLine="true"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="3">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:textColor="#121212"
+                android:text="Mark obtained in the Qualifing Exam:"
+                android:textAppearance="?android:textAppearanceMedium" android:textSize="14sp"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1">
+            <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/obtmarkApply"
+                android:inputType="numberDecimal"
+                android:singleLine="true"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Preference Of The Student"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:textColor="@android:color/black"
+        android:gravity="center"/>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Disaster Mangement"
+                android:textColor="#121212"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+
+
+        <RadioGroup
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/dis1Apply"
+                android:textColor="#121212"
+                android:text="1 "/>
+            <RadioButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/dis2Apply"
+                android:textColor="#121212"
+                android:text="2 "/>
+            <RadioButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/dis3Apply"
+                android:textColor="#121212"
+                android:text="3 "/>
+            <RadioButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/dis4Apply"
+                android:textColor="#121212"
+                android:text="4 "/>
+
+
+        </RadioGroup>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Basic Accounting"
+                android:textColor="#121212"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+
+
+            <RadioGroup
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/acc1Apply"
+                    android:textColor="#121212"
+                    android:text="1 "/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/acc2Apply"
+                    android:textColor="#121212"
+                    android:text="2 "/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/acc3Apply"
+                    android:textColor="#121212"
+                    android:text="3 "/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/acc4Apply"
+                    android:textColor="#121212"
+                    android:text="4 "/>
+
+
+            </RadioGroup>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Business Mathematics"
+                android:textColor="#121212"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+
+
+            <RadioGroup
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/mat1Apply"
+                    android:textColor="#121212"
+                    android:text="1 "/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/mat2Apply"
+                    android:textColor="#121212"
+                    android:text="2 "/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/mat3Apply"
+                    android:textColor="#121212"
+                    android:text="3 "/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/mat4Apply"
+                    android:textColor="#121212"
+                    android:text="4 "/>
+
+
+            </RadioGroup>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Web Technology"
+                android:textColor="#121212"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:layout_weight="3">
+
+
+            <RadioGroup
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/web1Apply"
+                    android:textColor="#121212"
+                    android:text="1 "/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/web2Apply"
+                    android:textColor="#121212"
+                    android:text="2 "/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/web3Apply"
+                    android:textColor="#121212"
+                    android:text="3 "/>
+                <RadioButton
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/web4Apply"
+                    android:textColor="#121212"
+                    android:text="4 "/>
+
+
+            </RadioGroup>
+        </RelativeLayout>
+    </LinearLayout>
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="Apply"
+        android:id="@+id/applyApply"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:textColor="@android:color/holo_blue_dark"
+        android:gravity="center"/>
+</LinearLayout>

@@ -1,9 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AdminHome">
+    tools:context=".AdminHome"
+    android:gravity="center"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Number of Applied Students "
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="#181717"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="#121212"
+            android:textSize="24sp"
+            android:layout_height="wrap_content"
+            android:id="@+id/noAdminHome"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Strength of the Course"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textColor="#121212"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Maths"
+            android:textSize="18sp"
+            android:textColor="#121212"/>
+
+        <EditText
+            android:id="@+id/mathsAdminHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Web"
+            android:textSize="18sp"
+            android:textColor="#121212"/>
+
+        <EditText
+            android:id="@+id/webAdminHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:text="Accounting"
+            android:textSize="18sp"
+            android:textColor="#121212"/>
+
+        <EditText
+            android:id="@+id/accountingAdminHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:text="Disaster"
+        android:textSize="18sp"
+        android:textColor="#121212"/>
+
+    <EditText
+        android:id="@+id/disasterAdminHome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:inputType="numberDecimal" />
+</LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Course Strength"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/acceptAdminHome"
+        android:textColor="#121212"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order Student"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/orderAdminHome"
+        android:textColor="#121212"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Allotement"
+        android:gravity="center"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        android:id="@+id/allotementAdminHome"
+        android:textColor="#121212"/>
+</LinearLayout>

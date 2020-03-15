@@ -1,9 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home2">
+    tools:context=".Home2"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#8FB1908C">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:layout_marginBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:text="Hello  "
+                android:gravity="right"
+                android:textColor="#333C3E"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:text="USERNAME"
+                android:textColor="#333C3E"
+                android:id="@+id/usernameHome2"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="#E13A4341"
+            android:id="@+id/userregnoHome2"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1CB1908C">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/applydesign"
+                android:gravity="center|bottom"
+                android:text="Apply"
+                android:id="@+id/applyHome2"
+                android:textAllCaps="false" />
+            <Button
+                android:background="@drawable/editdesign"
+                android:layout_marginRight="10dp"
+                android:id="@+id/editHome2"
+                android:textAllCaps="false"
+                android:gravity="center|bottom"
+                android:layout_height="wrap_content"
+                android:text="Edit/Delete"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+            <Button
+                android:background="@drawable/statusdesign"
+                android:layout_marginRight="10dp"
+                android:gravity="center|bottom"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/statusHome2"
+                android:textAllCaps="false"/>
+            <Button
+                android:background="@drawable/logoutdesign"
+                android:layout_marginRight="10dp"
+                android:id="@+id/logoutHome2"
+                android:textAllCaps="false"
+                android:gravity="center|bottom"
+                android:layout_height="wrap_content"
+                android:text="LogOut"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

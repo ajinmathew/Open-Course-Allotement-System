@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">project</string>
+    <string-array name="departmentlist">
+        <item>Select Department</item>
+        <item>Computer Science</item>
+        <item>Commerce</item>
+        <item>mathematics</item>
+        <item>Physics</item>
+    </string-array>
 </resources>
