@@ -1,32 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HomeUi"
-    android:orientation="vertical"
-    android:gravity="center">
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".HomeUi"
+android:orientation="vertical"
+android:gravity="center"
+android:background="#8FB1908C">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#1CB1908C">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/loginHomeUi"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registeration"
-        android:id="@+id/registerHomeUi"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Admin Login"
-        android:id="@+id/adminHomeUi"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Department"
-        android:id="@+id/departmentHomeUi"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center">
 
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/logindesign"
+                android:gravity="center|bottom"
+                android:text="Login"
+                android:id="@+id/loginHomeUi"
+                android:textAllCaps="false" />
+
+
+
+            <Button
+                android:background="@drawable/registerationdesign"
+                android:layout_marginRight="10dp"
+                android:id="@+id/registerHomeUi"
+                android:textAllCaps="false"
+                android:gravity="center|bottom"
+                android:layout_height="wrap_content"
+                android:text="Registeration"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_gravity="center">
+
+
+
+
+
+
+
+
+            <Button
+                android:background="@drawable/admindesign"
+                android:layout_marginRight="10dp"
+                android:gravity="center|bottom"
+                android:layout_height="wrap_content"
+                android:text="Admin"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/adminHomeUi"
+                android:textAllCaps="false"/>
+            <Button
+                android:background="@drawable/deptdesign"
+                android:layout_marginRight="10dp"
+                android:id="@+id/departmentHomeUi"
+                android:textAllCaps="false"
+                android:gravity="center|bottom"
+                android:layout_height="wrap_content"
+                android:text="Department"
+                android:layout_width="0dp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 </LinearLayout>

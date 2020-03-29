@@ -1,12 +1,12 @@
 package com.cs.project.project;
 
 public class Apply {
-    String Name,DOB,Department,eMailid,Registerno,Gender,Stream,Total_Mark,Obtained_Mark,Disaster,Accounting,Mathematics,Web,Index_Mark,Allotement,Verify;
+    String Name,DOB,Department,eMailid,Registerno,Gender,Stream,Total_Mark,Obtained_Mark,Disaster,Accounting,Mathematics,Web,Physics,Physical,Index_Mark,Allotement,Verify;
 
     public Apply() {
     }
 
-    public Apply(String name, String DOB, String department, String eMailid, String registerno, String gender, String stream, String total_Mark, String obtained_Mark, String disaster, String accounting, String mathematics, String web, String index_Mark, String allotement, String verify) {
+    public Apply(String name, String DOB, String department, String eMailid, String registerno, String gender, String stream, String total_Mark, String obtained_Mark, String disaster, String accounting, String mathematics, String web, String physics, String physical, String index_Mark, String allotement, String verify) {
         Name = name;
         this.DOB = DOB;
         Department = department;
@@ -20,6 +20,8 @@ public class Apply {
         Accounting = accounting;
         Mathematics = mathematics;
         Web = web;
+        Physics = physics;
+        Physical = physical;
         Index_Mark = index_Mark;
         Allotement = allotement;
         Verify = verify;
@@ -127,6 +129,22 @@ public class Apply {
 
     public void setWeb(String web) {
         Web = web;
+    }
+
+    public String getPhysics() {
+        return Physics;
+    }
+
+    public void setPhysics(String physics) {
+        Physics = physics;
+    }
+
+    public String getPhysical() {
+        return Physical;
+    }
+
+    public void setPhysical(String physical) {
+        Physical = physical;
     }
 
     public String getIndex_Mark() {

@@ -64,6 +64,21 @@ public class Home2 extends AppCompatActivity {
                 editor.commit();
                 Toast.makeText(getApplicationContext(),"Successfully Logout",Toast.LENGTH_LONG).show();
 
+                moveTaskToBack(true);
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
+            }
+        });
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),EditApplication.class));
+            }
+        });
+        btnStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),StatusApplication.class));
             }
         });
     }

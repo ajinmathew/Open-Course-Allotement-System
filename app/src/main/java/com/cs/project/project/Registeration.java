@@ -136,7 +136,7 @@ public class Registeration extends AppCompatActivity implements SlideDatePickerD
 
     @Override
     public void onPositiveClick(int day, int month, int year, Calendar calendar) {
-//use EEEE in pattern for impliment the day such as Sunday....
+        //use EEEE in pattern for impliment the day such as Sunday....
         SimpleDateFormat format=new SimpleDateFormat("dd MMM,YYYY", Locale.getDefault());
         btnCalender.setText(format.format(calendar.getTime()));
         DOB=format.format(calendar.getTime());

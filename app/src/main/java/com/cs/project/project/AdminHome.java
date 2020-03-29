@@ -15,65 +15,51 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-
 public class AdminHome extends AppCompatActivity {
-EditText edMaths,edWeb,edDisaster,edAccounting;
 Button btnOrder,btnAllotement,btnGet;
 List<Apply> pre_list;
 DatabaseReference reference;
-int count;
-int weblimit,mathslimit,disasterlimit,accountinglimit;
+int count,vercount;
+int weblimit=28,mathslimit=38,disasterlimit=25,accountinglimit=60,physicslimit=38,physicallimit=30;
 String allotement="null";
-TextView txtNo;
+TextView txtNo,txtVer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_home);
 
-        edAccounting=(EditText)findViewById(R.id.accountingAdminHome);
-        edDisaster=(EditText)findViewById(R.id.disasterAdminHome);
-        edMaths=(EditText)findViewById(R.id.mathsAdminHome);
-        edWeb=(EditText)findViewById(R.id.webAdminHome);
 
         txtNo=(TextView)findViewById(R.id.noAdminHome);
+        txtVer=(TextView)findViewById(R.id.verAdminHome);
+
+
+
+        vercount=0;
 
         btnAllotement=(Button)findViewById(R.id.allotementAdminHome);
         btnOrder=(Button)findViewById(R.id.orderAdminHome);
-        btnGet=(Button)findViewById(R.id.acceptAdminHome);
-
         reference=FirebaseDatabase.getInstance().getReference().child("Allotement").child("Allotement Data");
-        pre_list=new ArrayList<>();
-
-        btnGet.setOnClickListener(new View.OnClickListener() {
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                if (edMaths.getText().toString().isEmpty()){
-                    edMaths.setError("Required field");
-                    edMaths.requestFocus();
-                }else if (edWeb.getText().toString().isEmpty()){
-                    edWeb.setError("Required field");
-                    edWeb.requestFocus();
-                }else if (edAccounting.getText().toString().isEmpty()){
-                    edAccounting.setError("Required field");
-                    edAccounting.requestFocus();
-                }else if (edDisaster.getText().toString().isEmpty()){
-                    edDisaster.setError("Required field");
-                    edDisaster.requestFocus();
-                }else {
-                    weblimit=Integer.parseInt(edWeb.getText().toString().trim());
-                    mathslimit=Integer.parseInt(edMaths.getText().toString().trim());
-                    disasterlimit=Integer.parseInt(edDisaster.getText().toString().trim());
-                    accountinglimit=Integer.parseInt(edAccounting.getText().toString().trim());
-                }
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                count = (int) dataSnapshot.getChildrenCount();
+                txtNo.setText(String.valueOf(count));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
+
+
+        //Toast.makeText(getApplicationContext(),String.valueOf(weblimit),Toast.LENGTH_LONG).show();
+
+        pre_list=new ArrayList<>();
 
 
         btnOrder.setOnClickListener(new View.OnClickListener() {
@@ -82,14 +68,17 @@ TextView txtNo;
                 reference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        count = (int) dataSnapshot.getChildrenCount();
-                        txtNo.setText(String.valueOf(count));
                         for (DataSnapshot preSort:dataSnapshot.getChildren()){
                             Apply apply=preSort.getValue(Apply.class);
-                            pre_list.add(apply);
+                            assert apply != null;
+                            if (apply.getVerify().equals("Verified")){
+                                pre_list.add(apply);
+                                vercount++;
+                            }
+                            txtVer.setText(String.valueOf(vercount));
                         }
-                        for (int i=0;i<count;i++){
-                            for (int j=i+1;j<count;j++){
+                        for (int i=0;i<vercount;i++){
+                            for (int j=i+1;j<vercount;j++){
                                 Apply api=pre_list.get(i);
                                 Apply apj=pre_list.get(j);
                                 if (Float.parseFloat(api.getIndex_Mark())<Float.parseFloat(apj.getIndex_Mark())){
@@ -117,7 +106,7 @@ TextView txtNo;
             @Override
             public void onClick(View v) {
 
-                for (int i=0;i<count;i++){
+                for (int i=0;i<vercount;i++){
                     Apply ap1=pre_list.get(i);
 
                     if ((ap1.getMathematics().equals("1"))&&(mathslimit>0)){
@@ -132,6 +121,12 @@ TextView txtNo;
                     }else if ((ap1.getAccounting().equals("1"))&&(accountinglimit>0)){
                         allotement="Basic Accounting";
                         accountinglimit--;
+                    }else if ((ap1.getPhysics().equals("1"))&&(physicslimit>0)){
+                        allotement="Environmental Physics";
+                        physicslimit--;
+                    }else if ((ap1.getPhysical().equals("1"))&&(physicallimit>0)){
+                        allotement="Physical Education";
+                        physicallimit--;
                     }else {
                         if ((ap1.getMathematics().equals("2"))&&(mathslimit>0)){
                             allotement="Business Mathematics";
@@ -145,6 +140,12 @@ TextView txtNo;
                         }else if ((ap1.getAccounting().equals("2"))&&(accountinglimit>0)){
                             allotement="Basic Accounting";
                             accountinglimit--;
+                        }else if ((ap1.getPhysics().equals("2"))&&(physicslimit>0)){
+                            allotement="Environmental Physics";
+                            physicslimit--;
+                        }else if ((ap1.getPhysical().equals("2"))&&(physicallimit>0)){
+                            allotement="Physical Education";
+                            physicallimit--;
                         }else {
                             if ((ap1.getMathematics().equals("3"))&&(mathslimit>0)){
                                 allotement="Business Mathematics";
@@ -158,6 +159,12 @@ TextView txtNo;
                             }else if ((ap1.getAccounting().equals("3"))&&(accountinglimit>0)){
                                 allotement="Basic Accounting";
                                 accountinglimit--;
+                            }else if ((ap1.getPhysics().equals("3"))&&(physicslimit>0)){
+                                allotement="Environmental Physics";
+                                physicslimit--;
+                            }else if ((ap1.getPhysical().equals("3"))&&(physicallimit>0)){
+                                allotement="Physical Education";
+                                physicallimit--;
                             }else {
                                 if ((ap1.getMathematics().equals("4"))&&(mathslimit>0)){
                                     allotement="Business Mathematics";
@@ -171,6 +178,52 @@ TextView txtNo;
                                 }else if ((ap1.getAccounting().equals("4"))&&(accountinglimit>0)){
                                     allotement="Basic Accounting";
                                     accountinglimit--;
+                                }else if ((ap1.getPhysics().equals("4"))&&(physicslimit>0)){
+                                    allotement="Environmental Physics";
+                                    physicslimit--;
+                                }else if ((ap1.getPhysical().equals("4"))&&(physicallimit>0)){
+                                    allotement="Physical Education";
+                                    physicallimit--;
+                                }else {
+                                    if ((ap1.getMathematics().equals("5"))&&(mathslimit>0)){
+                                        allotement="Business Mathematics";
+                                        mathslimit--;
+                                    }else if ((ap1.getWeb().equals("5"))&&(weblimit>0)){
+                                        allotement="Web Technology";
+                                        weblimit--;
+                                    }else if ((ap1.getDisaster().equals("5"))&&(disasterlimit>0)){
+                                        allotement="Disaster Management";
+                                        disasterlimit--;
+                                    }else if ((ap1.getAccounting().equals("5"))&&(accountinglimit>0)){
+                                        allotement="Basic Accounting";
+                                        accountinglimit--;
+                                    }else if ((ap1.getPhysics().equals("5"))&&(physicslimit>0)){
+                                        allotement="Environmental Physics";
+                                        physicslimit--;
+                                    }else if ((ap1.getPhysical().equals("5"))&&(physicallimit>0)){
+                                        allotement="Physical Education";
+                                        physicallimit--;
+                                    }else {
+                                        if ((ap1.getMathematics().equals("6"))&&(mathslimit>0)){
+                                            allotement="Business Mathematics";
+                                            mathslimit--;
+                                        }else if ((ap1.getWeb().equals("6"))&&(weblimit>0)){
+                                            allotement="Web Technology";
+                                            weblimit--;
+                                        }else if ((ap1.getDisaster().equals("6"))&&(disasterlimit>0)){
+                                            allotement="Disaster Management";
+                                            disasterlimit--;
+                                        }else if ((ap1.getAccounting().equals("6"))&&(accountinglimit>0)){
+                                            allotement="Basic Accounting";
+                                            accountinglimit--;
+                                        }else if ((ap1.getPhysics().equals("6"))&&(physicslimit>0)){
+                                            allotement="Environmental Physics";
+                                            physicslimit--;
+                                        }else if ((ap1.getPhysical().equals("6"))&&(physicallimit>0)){
+                                            allotement="Physical Education";
+                                            physicallimit--;
+                                        }
+                                    }
                                 }
                             }
                         }

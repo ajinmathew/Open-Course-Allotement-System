@@ -11,5 +11,5 @@
         android:width="50dp"
         android:height="50dp"
         android:gravity="center"
-        android:drawable="@drawable/ic_logout"/>
+        android:drawable="@drawable/ic_team"/>
 </layer-list>
